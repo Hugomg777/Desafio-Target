@@ -1,0 +1,49 @@
+#include <iostream>
+#include <fstream>
+#include <nlohmann/json.hpp>
+#include <vector>
+#include <limits>
+
+using json = nlohmann::json;
+using namespace std;
+
+int main() {
+  
+    ifstream file("faturamento.json");
+    json faturamento_json;
+    file >> faturamento_json;
+
+    vector<double> fat;
+    for (const auto& dia : faturamento_json["dias"]) {
+        if (dia["valor"] != nullptr) { // ignorar dias sem faturamento
+            fat.push_back(dia["valor"]);
+        }
+    }
+
+    // Calcular menor e maior valor de faturamento
+    double menor = numeric_limits<double>::max();
+    double maior = numeric_limits<double>::min();
+    double soma = 0;
+
+    for (double valor : fat) {
+        if (valor < menor) menor = valor;
+        if (valor > maior) maior = valor;
+        soma += valor;
+    }
+
+   
+    double media = soma / fat.size();
+
+
+    int dias_acima_da_media = 0;
+    for (double valor : fat) {
+        if (valor > media) dias_acima_da_media++;
+    }
+
+    // Exibir resultados
+    cout << "Menor valor de faturamento: " << menor << endl;
+    cout << "Maior valor de faturamento: " << maior << endl;
+    cout << "Número de dias com faturamento acima da média: " << dias_acima_da_media << endl;
+
+    return 0;
+}
