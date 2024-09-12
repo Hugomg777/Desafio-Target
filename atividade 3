@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>
+
+int main() {
+   
+    double sp = 67836.43;
+    double rj = 36678.66;
+    double mg = 29229.88;
+    double es = 27165.48;
+    double outros = 19849.53;
+
+    double total = sp + rj + mg + es + outros;
+
+ 
+    double percen_sp = (sp / total) * 100;
+    double percen_rj = (rj / total) * 100;
+    double percen_mg = (mg / total) * 100;
+    double percen_es = (es / total) * 100;
+    double percen_outros = (outros / total) * 100;
+
+   
+    std::cout << std::fixed << std::setprecision(2);
+
+    
+    std::cout << "percentual de representacao por estado:" << std::endl;
+    std::cout << "SP: " << percen_sp << "%" << std::endl;
+    std::cout << "RJ: " << percen_rj << "%" << std::endl;
+    std::cout << "MG: " << percen_mg << "%" << std::endl;
+    std::cout << "ES: " << percen_es << "%" << std::endl;
+    std::cout << "Outros: " << percen_outros << "%" << std::endl;
+
+    return 0;
+}
+
