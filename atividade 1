@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+//aqui criei uma funçao para verificar se o numero pertence a sequencia de Fibonacci
+bool isFibonacci(int num) {
+    if (num == 0 || num == 1) return true;
+    int a = 0, b = 1, c = a + b;
+    while (c <= num) {
+        if (c == num) return true;
+        a = b;
+        b = c;
+        c = a + b;
+    }
+    return false;
+}
+
+int main() {
+    int num;
+    cout << "Informe um número: ";
+    cin >> num;
+
+    if (isFibonacci(num)) {
+        cout << "O número " << num << " pertence à sequência de Fibonacci." << endl;
+    } else {
+        cout << "O número " << num << " não pertence à sequência de Fibonacci." << endl;
+    }
+
+    return 0;
+}
+
