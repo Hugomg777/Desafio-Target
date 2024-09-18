@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 #include <iomanip>
 
 int main() {
@@ -19,15 +20,15 @@ int main() {
     double percen_outros = (outros / total) * 100;
 
    
-    std::cout << std::fixed << std::setprecision(2);
+    cout << fixed << setprecision(2);
 
     
-    std::cout << "percentual de representacao por estado:" << std::endl;
-    std::cout << "SP: " << percen_sp << "%" << std::endl;
-    std::cout << "RJ: " << percen_rj << "%" << std::endl;
-    std::cout << "MG: " << percen_mg << "%" << std::endl;
-    std::cout << "ES: " << percen_es << "%" << std::endl;
-    std::cout << "Outros: " << percen_outros << "%" << std::endl;
+    cout << "percentual de representacao por estado:" << endl;
+    cout << "SP: " << percen_sp << "%" << endl;
+    cout << "RJ: " << percen_rj << "%" << endl;
+    cout << "MG: " << percen_mg << "%" <<endl;
+    cout << "ES: " << percen_es << "%" << endl;
+   cout << "Outros: " << percen_outros << "%" << endl;
 
     return 0;
 }
