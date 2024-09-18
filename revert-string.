@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-
+using namespace std;
 int main() {
     
-    std::string str = "Exemplo de string";
+    string str = "Exemplo de string";
 
   
     int n = str.length();
@@ -16,7 +16,7 @@ int main() {
     }
 
    
-    std::cout << "String invertida: " << str << std::endl;
+    cout << "String invertida: " << str << endl;
 
     return 0;
 }
